@@ -1,0 +1,51 @@
+/* src/assets/css/Navbar.css */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.85); /* Latar putih semi-transparan */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0; /* Garis bawah abu-abu terang */
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand a {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b; /* Warna brand menjadi gelap agar kontras */
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #475569; /* Warna link abu-abu */
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #4f46e5; /* Warna aksen: Indigo/Biru Keunguan */
+}
+
+.nav-links a.router-link-exact-active {
+  color: #4f46e5;
+  font-weight: 700;
+}

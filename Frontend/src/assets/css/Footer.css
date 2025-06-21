@@ -1,0 +1,52 @@
+/* src/assets/css/Footer.css */
+
+.site-footer {
+  background-color: #f1f5f9; /* bg-slate-100, sedikit lebih gelap dari body */
+  color: #64748b; /* text-slate-500 */
+  border-top: 1px solid #e2e8f0; /* Garis pemisah atas */
+  margin-top: auto; /* Mendorong footer ke bawah */
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem; /* Padding lebih besar */
+  display: flex;
+  flex-direction: column; /* Susun ke bawah di layar kecil */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem; /* Jarak antara ikon dan copyright */
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem; /* Jarak antar ikon */
+}
+
+.social-icons a {
+  color: #94a3b8; /* text-slate-400 */
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #4f46e5; /* Warna aksen Indigo saat di-hover */
+  transform: translateY(-3px); /* Efek ikon sedikit terangkat */
+}
+
+.icon {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem; /* 24px */
+  fill: currentColor; /* Warna ikon mengikuti warna link (a) */
+}
+
+.copyright {
+  font-size: 0.875rem; /* text-sm */
+  text-align: center;
+}
+
+/* Aturan untuk layar lebih besar */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row; /* Susun ke samping di layar besar */
+  }
+}

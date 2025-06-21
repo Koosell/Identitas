@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Pastikan base path sesuai dengan NAMA REPOSITORY Anda
+  // Konfigurasi base path untuk deploy ke sub-folder di GitHub Pages
   base: '/Identitas/', 
   
   plugins: [

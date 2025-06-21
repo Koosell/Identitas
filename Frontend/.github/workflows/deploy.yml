@@ -1,0 +1,50 @@
+# Nama workflow
+name: Deploy Vue app to Pages
+
+# Kapan workflow ini akan berjalan
+on:
+  # Berjalan setiap kali ada push ke branch `main`
+  push:
+    branches: [ "main" ]
+  # Memungkinkan kita menjalankan workflow ini secara manual dari tab Actions di GitHub
+  workflow_dispatch:
+
+# Mengatur izin untuk workflow agar bisa men-deploy ke GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Mengatur agar hanya ada satu proses deploy yang berjalan pada satu waktu
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# Langkah-langkah pekerjaan yang akan dilakukan oleh "robot" GitHub
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest # Menggunakan server Linux terbaru
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Menggunakan Node.js versi 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build # Menjalankan build, pastikan base path di vite.config.js sudah benar ('/Identitas/')
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Mengunggah isi folder 'dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

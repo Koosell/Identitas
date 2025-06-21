@@ -8,6 +8,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   // Konfigurasi base path untuk deploy ke sub-folder di GitHub Pages
   base: '/Identitas/', 
+  plugins: [vue()],
   
   plugins: [
     vue(),

@@ -1,24 +1,19 @@
-# Nama workflow
 name: Deploy Vue app to Pages
 
-# Kapan workflow ini akan berjalan
 on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
 
-# Mengatur izin
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Mengatur concurrency
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# Langkah-langkah pekerjaan
 jobs:
   deploy:
     environment:
@@ -33,22 +28,20 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          # Beri tahu lokasi cache npm yang benar
-          cache-dependency-path: Frontend/package-lock.json 
+          cache-dependency-path: ./Frontend/package-lock.json
       - name: Install dependencies
-        # PERINTAH BARU: Bekerja dari dalam folder Frontend
         working-directory: ./Frontend
-        run: npm install
+        run: npm ci  # Gunakan npm ci untuk instalasi yang lebih konsisten
       - name: Build
-        # PERINTAH BARU: Bekerja dari dalam folder Frontend
         working-directory: ./Frontend
         run: npm run build
+        env:
+          VITE_BASE_URL: /Identitas/  # Sesuaikan dengan nama repositori jika subdirektori
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Path ke folder dist sekarang ada di dalam Frontend
           path: './Frontend/dist'
       - name: Deploy to GitHub Pages
         id: deployment

@@ -4,9 +4,9 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(255, 255, 255, 0.85); /* Latar putih semi-transparan */
+  background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e2e8f0; /* Garis bawah abu-abu terang */
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .nav-container {
@@ -18,16 +18,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Diperlukan untuk menu mobile */
 }
 
 .brand a {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e293b; /* Warna brand menjadi gelap agar kontras */
-  letter-spacing: 0.1em;
+  color: #1e293b;
+  letter-spacing: 0.05em; /* Sedikit disesuaikan */
 }
 
+/* --- Tombol Hamburger --- */
+.hamburger-button {
+  display: none; /* Sembunyikan di desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 60; /* Pastikan di atas menu */
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #1e293b;
+  border-radius: 3px;
+}
+
+/* --- Style Menu Navigasi --- */
 .nav-links {
   display: flex;
   align-items: center;
@@ -35,17 +59,57 @@
 }
 
 .nav-links a {
-  color: #475569; /* Warna link abu-abu */
+  color: #475569;
   font-weight: 500;
   transition: color 0.3s ease;
-  position: relative;
 }
 
 .nav-links a:hover {
-  color: #4f46e5; /* Warna aksen: Indigo/Biru Keunguan */
+  color: #4f46e5;
 }
 
 .nav-links a.router-link-exact-active {
   color: #4f46e5;
   font-weight: 700;
+}
+
+/* ======================================= */
+/* --- STYLE RESPONSIVE UNTUK MOBILE --- */
+/* ======================================= */
+
+@media (max-width: 767px) {
+  .hamburger-button {
+    display: flex; /* Tampilkan tombol hamburger di mobile */
+  }
+
+  .nav-links {
+    /* Sembunyikan menu di mobile secara default */
+    display: none;
+    position: absolute;
+    top: 100%; /* Posisi di bawah navbar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 0;
+  }
+
+  /* Tampilkan menu jika memiliki kelas 'active' */
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+  }
 }

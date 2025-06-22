@@ -29,6 +29,7 @@ const router = createRouter({
       name: 'project-detail',
       component: () => import('../views/ProjectDetailView.vue')
     }
+    
   ]
 })
 

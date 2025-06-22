@@ -1,0 +1,130 @@
+/* src/assets/css/ProjectDetailView.css */
+
+.project-detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #64748b;
+  transition: color 0.3s;
+}
+.back-link:hover {
+  color: #4f46e5;
+}
+
+.project-title-detail {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+}
+
+.project-category-detail {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4f46e5;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+.section-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.project-description {
+  font-size: 1.125rem;
+  color: #334155;
+  line-height: 1.8;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background-color: #eef2ff;
+  color: #4338ca;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.project-links {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link-button {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.project-link-button:hover {
+  transform: translateY(-2px);
+}
+.project-link-button.secondary {
+  background-color: #ffffff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+.project-link-button.secondary:hover {
+   background-color: #f8fafc;
+}
+.project-link-button:not(.secondary) {
+  background-color: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.3);
+}
+.project-link-button:not(.secondary):hover {
+  background-color: #4338ca;
+  box-shadow: 0 6px 20px 0 rgba(79, 70, 229, 0.4);
+}
+
+.not-found {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.not-found-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #1e293b;
+}
+.not-found p {
+  margin: 1rem 0 2rem;
+  color: #64748b;
+}

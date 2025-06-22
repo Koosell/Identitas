@@ -1,0 +1,84 @@
+/* src/assets/css/PortfolioView.css */
+
+.portfolio-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Style untuk Tombol Filter --- */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* Jarak antar tombol */
+  margin-bottom: 3rem;
+}
+
+.filter-button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px; /* Membuat tombol super bulat */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.filter-button:hover {
+  background-color: #eef2ff; /* Warna latar saat hover */
+  color: #4338ca; /* Warna teks saat hover */
+  border-color: #c7d2fe;
+}
+
+/* Style untuk tombol yang sedang aktif */
+.filter-button.active {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+}
+
+
+/* --- Style Galeri Proyek --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 kolom di mobile */
+  gap: 2rem;
+}
+
+/* Aturan untuk layar lebih besar */
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom di desktop */
+  }
+}
